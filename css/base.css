@@ -1,0 +1,10 @@
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+
+/* Both languages are in the page, the lang attribute on <html> shows one */
+html[lang="en"] [lang="fr"], html[lang="fr"] [lang="en"] { display: none !important; }
+
+/* Theme button: moon in light mode, sun in dark mode */
+.theme .sun { display: none; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .theme .sun { display: block; } :root:not([data-theme="light"]) .theme .moon { display: none; } }
+:root[data-theme="dark"] .theme .sun { display: block; } :root[data-theme="dark"] .theme .moon { display: none; }

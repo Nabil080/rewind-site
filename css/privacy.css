@@ -1,0 +1,27 @@
+:root { --bg: #ecedef; --panel: #ffffff; --ink: #141416; --accent: #141416; --muted: rgba(20,20,22,.66); --line: rgba(20,20,22,.14); --focus: #141416; }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) { --bg: #121212; --panel: #1f1f21; --ink: #f3efe2; --accent: #ffd23f; --muted: rgba(243,239,226,.65); --line: rgba(243,239,226,.15); --focus: #ffd23f; }
+}
+:root[data-theme="dark"] { --bg: #121212; --panel: #1f1f21; --ink: #f3efe2; --accent: #ffd23f; --muted: rgba(243,239,226,.65); --line: rgba(243,239,226,.15); --focus: #ffd23f; }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 17px/1.6 "Work Sans", system-ui, sans-serif; }
+.display { font-family: "Fraunces", Georgia, serif; font-weight: 900; letter-spacing: -.02em; line-height: 1; }
+
+/* Header */
+.wrap { max-width: 1080px; margin: 0 auto; padding: 0 20px; }
+header { display: flex; align-items: center; justify-content: space-between; padding: 20px 0; }
+.brand { display: flex; align-items: center; gap: 10px; text-decoration: none; color: inherit; }
+.brand .mark { width: 34px; height: 34px; flex: none; }
+.brand span { font-size: 28px; }
+.tools { display: flex; align-items: center; gap: 10px; }
+.theme { display: grid; place-items: center; width: 36px; height: 36px; border: 0; border-radius: 999px; background: var(--panel); color: var(--ink); cursor: pointer; padding: 0; }
+.theme svg { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; }
+.theme:focus-visible, .switch button:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
+.switch { display: flex; gap: 4px; background: var(--panel); border-radius: 999px; padding: 4px; }
+.switch button { border: 0; background: none; color: var(--muted); font: 700 13px "Work Sans", sans-serif; padding: 6px 12px; border-radius: 999px; cursor: pointer; }
+.switch button[aria-pressed="true"] { background: var(--ink); color: var(--bg); }
+
+main { max-width: 680px; margin: 0 auto; padding: 32px 0 80px; }
+h1 { color: var(--accent); font-size: clamp(34px, 6vw, 44px); margin: 0 0 12px; }
+h2 { font-size: 20px; margin: 36px 0 8px; }
+main a { color: var(--accent); }
+.muted { color: var(--muted); }
